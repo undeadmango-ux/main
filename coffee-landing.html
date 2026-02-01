@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O'koff | Premium Brew</title>
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+    footer {
+    background: #110e0b; /* Deep coffee bean dark */
+    color: #f4eee1;
+    padding: 80px 8% 40px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+
+  .footer-logo h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #c49b63;
+    margin-bottom: 20px;
+  }
+
+  .footer-logo p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    line-height: 1.6;
+  }
+
+  .footer-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #ffffff;
+    position: relative;
+  }
+
+  .footer-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 30px;
+    height: 2px;
+    background: #c49b63;
+  }
+
+  .footer-links ul {
+    list-style: none;
+  }
+
+  .footer-links li {
+    margin-bottom: 12px;
+  }
+
+  .footer-links a {
+    color: #f4eee1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: 0.3s;
+  }
+
+  .footer-links a:hover {
+    opacity: 1;
+    color: #c49b63;
+    padding-left: 5px;
+  }
+
+  .footer-contact p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .newsletter-form {
+    display: flex;
+    margin-top: 15px;
+  }
+
+  .newsletter-form input {
+    padding: 12px 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    color: white;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+    width: 100%;
+    font-size: 0.85rem;
+  }
+
+  .newsletter-btn {
+    background: #c49b63;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  .newsletter-btn:hover {
+    background: #a37f4f;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .social-icons a {
+    width: 35px;
+    height: 35px;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 0.8rem;
+  }
+
+  .social-icons a:hover {
+    background: #c49b63;
+    transform: translateY(-3px);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    opacity: 0.5;
+  }
+
+  @media (max-width: 900px) {
+    .footer-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+    }
+  }
+  
+    :root {
+      --primary: #c49b63;
+      --dark-bg: #1a1510;
+      --light-bg: #f4eee1;
+      --outer-bg: #e3d9c6; 
+      --text-dark: #2b1e16;
+      --max-width: 1100px;
+    }
+
+    /* ULTRA SMOOTH LANGUAGE ANIMATION */
+    .lang-text { 
+      display: inline-block; 
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; 
+      opacity: 1;
+    }
+    .switching { 
+      opacity: 0; 
+      transform: translateY(5px); 
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: var(--outer-bg); color: var(--text-dark); overflow-x: hidden; }
+
+    .main-wrapper {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      background: var(--light-bg);
+      box-shadow: 0 0 50px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      position: absolute;
+      width: 100%;
+      max-width: var(--max-width);
+      z-index: 10;
+      color: white;
+    }
+    .nav-links a { margin-left: 15px; text-decoration: none; color: white; font-size: 0.85rem; font-weight: 500; }
+
+    /* HERO */
+    .hero {
+      height: 60vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1600');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+      color: white;
+    }
+    .hero-content h1 { font-size: clamp(2.2rem, 8vw, 4rem); line-height: 1.1; }
+    
+    .btn {
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      font-size: 0.9rem;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    .btn-primary { background: var(--primary); color: white; }
+
+    /* MENU SECTION - 4 ITEMS */
+    .menu-section { padding: 60px 8%; background: #fffcf7; }
+    .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .menu-item { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; border-bottom: 1px dashed #d1cbc0; padding-bottom: 5px; }
+    .price { font-weight: 600; color: var(--primary); }
+
+    /* CARD SLIDER */
+    .gallery-section { padding: 60px 5%; text-align: center; background: white; }
+    .card-container {
+      position: relative;
+      height: 420px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .coffee-card {
+      position: absolute;
+      width: 260px;
+      background: #fdfaf5;
+      padding: 15px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      transform: translateX(50px) scale(0.9);
+      pointer-events: none;
+    }
+    .coffee-card.active { opacity: 1; transform: translateX(0) scale(1); pointer-events: auto; z-index: 2; }
+    .coffee-card.prev { opacity: 0.3; transform: translateX(-100px) scale(0.85); filter: blur(1px); }
+    .coffee-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 15px; margin-bottom: 15px; }
+
+    footer { background: #110e0b; color: white; padding: 40px 5%; text-align: center; font-size: 0.8rem; }
+
+    @media (max-width: 600px) {
+      .menu-grid { grid-template-columns: 1fr; }
+      .navbar { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+    <header class="navbar">
+      <div style="font-size: 1.5rem; font-weight: 700;">O'koff</div>
+      <nav class="nav-links">
+        <a href="#" class="lang-text" data-en="Home" data-es="Inicio">Home</a>
+        <a href="#" class="lang-text" data-en="Menu" data-es="Menú">Menu</a>
+        <a href="#" class="lang-text" data-en="Contact" data-es="Contacto">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="lang-text" data-en="Savor the Perfect Brew!" data-es="¡El Tueste Perfecto!">Savor the Perfect Brew!</h1>
+        <br>
+        <a href="#menu" class="btn btn-primary lang-text" data-en="View Menu" data-es="Ver Menú">View Menu</a>
+      </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+      <div style="text-align:center; margin-bottom:40px;">
+        <h2 class="lang-text" data-en="Signature Menu" data-es="Menú Especial">Signature Menu</h2>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div>
+            <h4 class="lang-text" data-en="Classic Espresso" data-es="Espresso Clásico">Classic Espresso</h4>
+            <p style="font-size:0.75rem; color:#888;">Pure & Intense</p>
+          </div>
+          <span class="price">$3.50</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <h4 class="lang-text" data-en="Honey Latte" data-es="Latte de Miel">Honey Latte</h4>
+            <p style="font-size:0.75rem; color:#888;">Smooth & Sweet</p>
+          </div>
+          <span class="price">$4.75</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <h4 class="lang-text" data-en="Oat Cold Brew" data-es="Cold Brew de Avena">Oat Cold Brew</h4>
+            <p style="font-size:0.75rem; color:#888;">24hr Steeped</p>
+          </div>
+          <span class="price">$5.50</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <h4 class="lang-text" data-en="Caramel Macchiato" data-es="Macchiato Caramelo">Caramel Macchiato</h4>
+            <p style="font-size:0.75rem; color:#888;">Rich Toffee Notes</p>
+          </div>
+          <span class="price">$5.25</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <h2 class="lang-text" data-en="Featured Roasts" data-es="Nuestros Granos">Featured Roasts</h2>
+      <div class="card-container">
+        <div class="coffee-card active">
+          <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=500">
+          <h3>Dark Velvet</h3>
+          <p style="color:var(--primary); font-weight:600;">$18.00</p>
+        </div>
+        <div class="coffee-card">
+          <img src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500">
+          <h3>Morning Bloom</h3>
+          <p style="color:var(--primary); font-weight:600;">$16.50</p>
+        </div>
+        <div class="coffee-card">
+          <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500">
+          <h3>Golden Peak</h3>
+          <p style="color:var(--primary); font-weight:600;">$21.00</p>
+        </div>
+        <div class="coffee-card">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500">
+          <h3>O'koff House</h3>
+          <p style="color:var(--primary); font-weight:600;">$14.00</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h2>O'koff</h2>
+      <p>Crafting the perfect coffee experience since 2016. Sourced ethically, roasted locally, and served with passion in every cup.</p>
+      <div class="social-icons">
+        <a href="#">FB</a>
+        <a href="#">IG</a>
+        <a href="#">TW</a>
+        <a href="#">LI</a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">Coffee Menu</a></li>
+        <li><a href="#">Brewing Guide</a></li>
+        <li><a href="#">Shop Beans</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h3 class="footer-heading">Visit Us</h3>
+      <p>123 Roaster St, Coffee Valley</p>
+      <p>Mon - Fri: 7am - 9pm</p>
+      <p>Sat - Sun: 8am - 10pm</p>
+      <p>hello@okoff.com</p>
+    </div>
+
+    <div class="footer-newsletter">
+      <h3 class="footer-heading">Newsletter</h3>
+      <p style="font-size: 0.85rem; opacity: 0.7;">Get brewing tips and 10% off your first order.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Your email address">
+        <button type="submit" class="newsletter-btn">Go</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 O'koff Coffee Company. All rights reserved.</p>
+    <div style="display: flex; gap: 20px;">
+      <a href="#" style="color: inherit; text-decoration: none;">Privacy Policy</a>
+      <a href="#" style="color: inherit; text-decoration: none;">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script>
+  // NO-FLASH LANGUAGE SWITCHER
+  const langElements = document.querySelectorAll('.lang-text');
+  let currentLang = 'en';
+
+  setInterval(() => {
+    langElements.forEach(el => el.classList.add('switching'));
+    
+    // Switch text exactly when opacity is 0 (after 500ms transition)
+    setTimeout(() => {
+      currentLang = currentLang === 'en' ? 'es' : 'en';
+      langElements.forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+        el.classList.remove('switching');
+      });
+    }, 500); 
+  }, 4000);
+
+  // CARD SLIDER
+  const cards = document.querySelectorAll('.coffee-card');
+  let cardIndex = 0;
+
+  function rotateCards() {
+    cards.forEach(card => card.className = 'coffee-card');
+    let prevIndex = (cardIndex === 0) ? cards.length - 1 : cardIndex - 1;
+    cards[prevIndex].classList.add('prev');
+    cards[cardIndex].classList.add('active');
+    cardIndex = (cardIndex + 1) % cards.length;
+  }
+  setInterval(rotateCards, 3000);
+  rotateCards();
+</script>
+
+</body>
+</html>
